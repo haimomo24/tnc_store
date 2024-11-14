@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const [user, setUser] = useState(null);
@@ -38,20 +38,20 @@ const Header = () => {
                 aria-label="Global"
             >
                 <div className="flex lg:flex-1">
-                    <a href="/" onClick={handleLogoClick} className="-m-1.5 p-1.5">
+                    <Link href="/" onClick={handleLogoClick} className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
                         <img
                             className="h-12 w-auto"
                             src="https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/368725784_695682005920092_1940464881160114044_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=CBfSaYEHa8sQ7kNvgGgU-yK&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=ADCmpmKiNZvKOt2sZK6qQdT&oh=00_AYA58QIme_W7FWy369uoxOr5aN7x8nYS_nGYSn6fWczmoA&oe=6737A74C"
                             alt="Company Logo"
                         />
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="hidden lg:flex lg:gap-x-12">
-                    <a href="/" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
+                    <Link href="/" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         Home
-                    </a>
+                    </Link>
                     <a href="/product" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         Products
                     </a>
