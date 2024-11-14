@@ -49,19 +49,19 @@ const Header = () => {
                 </div>
 
                 <div className="hidden lg:flex lg:gap-x-12">
-                    <Link href="/" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
+                    <Link to="/" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         Home
                     </Link>
-                    <Link href="/product" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
+                    <Link to="/product" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         Products
                     </Link>
-                    <Link href="/contact" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
+                    <Link to="/contact" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         Contact
                     </Link>
-                    <Link href="/news" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
+                    <Link to="/news" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         News
                     </Link>
-                    <Link href="/cartshoping" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
+                    <Link to="/cartshoping" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         Cart shopping
                     </Link>
                 </div>
