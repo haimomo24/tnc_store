@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 const UserAdmin = () => {
   const [users, setUsers] = useState([]);
@@ -103,11 +104,11 @@ const UserAdmin = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                       </button>
-                      <a href={`/dashboard/edituser/${user.id}`}>
+                      <Link to={`/dashboard/edituser/${user.id}`}>
                         <button className="text-blue-500 hover:text-blue-700 ml-4">
                           <FontAwesomeIcon icon={['fas', 'edit']} className="text-blue-500 hover:text-blue-700 transition-colors duration-200" />
                         </button>
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                 ))

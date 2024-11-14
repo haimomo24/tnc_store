@@ -96,12 +96,12 @@ const Header = () => {
                             </button>
                         </>
                     ) : (
-                        <a 
-                            href="/login" 
+                        <Link 
+                            to="/login" 
                             className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors duration-200"
                         >
                             Log in
-                        </a>
+                        </Link>
                     )}
                 </div>
             </nav>

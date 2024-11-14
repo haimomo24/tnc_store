@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 const ProductAdmin = () => {
     const [products, setProducts] = useState([]);
@@ -111,7 +112,7 @@ const ProductAdmin = () => {
                 <Notification message={notification.message} type={notification.type} />
             )}
             <div className='flex justify-end bg-[#111827]'>
-                <a href='/dashboard/addproduct'>
+                <Link to='/dashboard/addproduct'>
                     <button
                         type="button"
                         className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4
@@ -120,7 +121,7 @@ const ProductAdmin = () => {
                     >
                         ADD
                     </button>
-                </a>
+                </Link>
             </div>
 
             <div className="relative overflow-x-auto">
