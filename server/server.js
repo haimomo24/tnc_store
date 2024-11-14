@@ -9,10 +9,10 @@ const port = 5000;
 
 // Cấu hình MySQL kết nối  
 const db = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: '123456789',
-  database: 'lapdb',
+  host: 'sql12.freemysqlhosting.net',
+  user: 'sql12744721',
+  password: 'DUS9RQJlKM',
+  database: 'sql12744721',
 });
 
 // Kết nối MySQL  
