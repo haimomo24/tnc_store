@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const SiderBarAdmin = () => {
   return (
-    <aside className="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto bg-slate-600 border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+    <aside className="flex flex-col w-64 h-screen px-4 py-8  border-r rtl:border-r-0 rtl:border-l bg-gray-100">
       <Link to="/">
         <img
           className="w-auto h-6 sm:h-7"
