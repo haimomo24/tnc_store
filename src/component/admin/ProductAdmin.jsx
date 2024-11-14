@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+library.add(faArrowLeft, faArrowRight);
+
 
 const ProductAdmin = () => {
     const [products, setProducts] = useState([]);
@@ -167,44 +172,45 @@ const ProductAdmin = () => {
               
             </div>
             <div className="flex justify-center mt-8 space-x-2 pb-4">
-                    <button
-                        onClick={() => paginate(currentPage - 1)}
-                        disabled={currentPage === 1}
-                        className={`px-4 py-2 rounded-lg ${
-                            currentPage === 1
-                                ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                                : 'bg-blue-500 text-white hover:bg-blue-600'
-                        }`}
-                    >
-                        Trước
-                    </button>
+    <button
+        onClick={() => paginate(currentPage - 1)}
+        disabled={currentPage === 1}
+        className={`px-4 py-2 rounded-lg ${
+            currentPage === 1
+                ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                : 'bg-blue-500 text-white hover:bg-blue-600'
+        }`}
+    >
+        <FontAwesomeIcon icon={['fas', 'arrow-left']} /> Trước
+    </button>
 
-                    {[...Array(totalPages)].map((_, index) => (
-                        <button
-                            key={index + 1}
-                            onClick={() => paginate(index + 1)}
-                            className={`px-4 py-2 rounded-lg ${
-                                currentPage === index + 1
-                                    ? 'bg-blue-500 text-white'
-                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                            }`}
-                        >
-                            {index + 1}
-                        </button>
-                    ))}
+    {[...Array(totalPages)].map((_, index) => (
+        <button
+            key={index + 1}
+            onClick={() => paginate(index + 1)}
+            className={`px-4 py-2 rounded-lg ${
+                currentPage === index + 1
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+        >
+            {index + 1}
+        </button>
+    ))}
 
-                    <button
-                        onClick={() => paginate(currentPage + 1)}
-                        disabled={currentPage === totalPages}
-                        className={`px-4 py-2 rounded-lg ${
-                            currentPage === totalPages
-                                ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                                : 'bg-blue-500 text-white hover:bg-blue-600'
-                        }`}
-                    >
-                        Sau
-                    </button>
-                </div>
+    <button
+        onClick={() => paginate(currentPage + 1)}
+        disabled={currentPage === totalPages}
+        className={`px-4 py-2 rounded-lg ${
+            currentPage === totalPages
+                ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                : 'bg-blue-500 text-white hover:bg-blue-600'
+        }`}
+    >
+        Sau <FontAwesomeIcon icon={['fas', 'arrow-right']} />
+    </button>
+</div>
+
         </div>
     );
 };
