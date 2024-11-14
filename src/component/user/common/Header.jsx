@@ -52,18 +52,18 @@ const Header = () => {
                     <Link href="/" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         Home
                     </Link>
-                    <a href="/product" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
+                    <Link href="/product" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         Products
-                    </a>
-                    <a href="/contact" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
+                    </Link>
+                    <Link href="/contact" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         Contact
-                    </a>
-                    <a href="/news" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
+                    </Link>
+                    <Link href="/news" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         News
-                    </a>
-                    <a href="/cartshoping" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
+                    </Link>
+                    <Link href="/cartshoping" className="text-sm/6 font-semibold text-gray-900 hover:text-yellow-400 transition-colors">
                         Cart shopping
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4 items-center">
