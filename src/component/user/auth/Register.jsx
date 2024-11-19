@@ -39,7 +39,7 @@ const Register = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:5000/register', formData);
+            const response = await axios.post('https://tnc-store-oz66.vercel.app/register', formData);
             setSuccess(response.data.message);
             setTimeout(() => {
                 navigate('/login');
