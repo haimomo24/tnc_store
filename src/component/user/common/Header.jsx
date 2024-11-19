@@ -24,6 +24,9 @@ const Header = () => {
         if (user && user.level === 2) {
             navigate('/dashboard');
         }
+        else if (user.level === 1) {
+            navigate('/editprofile');
+        }
     };
 
     const handleLogoClick = (e) => {

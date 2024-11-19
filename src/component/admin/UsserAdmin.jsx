@@ -13,7 +13,7 @@ const UserAdmin = () => {
   }, []);
 
   const fetchUsers = () => {
-    fetch('http://localhost:5000/users')
+    fetch('https://server-tnc-production.up.railway.app/users')
       .then(response => response.json())
       .then(data => {
         setUsers(data);
@@ -27,7 +27,7 @@ const UserAdmin = () => {
 
   const handleDeleteUser = (userId) => {
     if (window.confirm('Are you sure you want to delete this user?')) {
-      fetch(`http://localhost:5000/users/${userId}`, {
+      fetch(`https://server-tnc-production.up.railway.app/users/${userId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ const UserAdmin = () => {
           </table>
 
           {/* Pagination */}
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center mt-8 space-x-2 pb-4">
             <div className="inline-flex rounded-md shadow-sm">
               {Array.from({ length: totalPages }, (_, index) => (
                 <button

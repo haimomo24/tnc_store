@@ -111,13 +111,16 @@ const AddProduct = () => {
         if (imageFiles.image_3) submitData.append('image_3', imageFiles.image_3);
 
         try {
-            const response = await fetch('http://localhost:5000/products', {
+            const response = await fetch('https://server-tnc-production.up.railway.app/products', {
                 method: 'POST',
-                body: submitData
+                body: submitData,
+                headers: {
+                    'Accept': 'application/json'
+                }
             });
-
+        
             const data = await response.json();
-
+        
             if (response.ok) {
                 setMessage('Thêm sản phẩm thành công!');
                 setTimeout(() => {
@@ -131,6 +134,11 @@ const AddProduct = () => {
         } finally {
             setLoading(false);
         }
+
+        console.log('FormData content:');
+for (let pair of submitData.entries()) {
+    console.log(pair[0] + ': ' + pair[1]);
+}
     };
 
     return (

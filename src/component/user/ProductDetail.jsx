@@ -32,8 +32,8 @@ const ProductDetail = () => {
     const fetchData = async () => {
       try {
         const [productResponse, similarResponse] = await Promise.all([
-          fetch(`http://localhost:5000/products/${id}`),
-          fetch(`http://localhost:5000/products?_limit=4`)
+          fetch(`https://server-tnc-production.up.railway.app/products/${id}`),
+          fetch(`https://server-tnc-production.up.railway.app/products?_limit=4`)
         ]);
 
         if (!productResponse.ok) {
@@ -46,7 +46,7 @@ const ProductDetail = () => {
         ]);
 
         setProduct(productData);
-        setMainImage(`http://localhost:5000${productData.image}`);
+        setMainImage(`https://server-tnc-production.up.railway.app${productData.image}`);
         setSimilarProducts(
           similarData
             .filter(p => p.id !== productData.id)
@@ -63,7 +63,7 @@ const ProductDetail = () => {
   }, [id]);
 
   const handleImageClick = (imagePath) => {
-    setMainImage(`http://localhost:5000${imagePath}`);
+    setMainImage(`https://server-tnc-production.up.railway.app${imagePath}`);
   };
 
   const scrollToTop = () => {
@@ -155,11 +155,11 @@ const ProductDetail = () => {
                 img && (
                   <img
                     key={index}
-                    src={`http://localhost:5000${img}`}
+                    src={`https://server-tnc-production.up.railway.app${img}`}
                     alt={`Hình ${index + 1}`}
                     className={`cursor-pointer rounded-lg hover:opacity-75 transition-opacity duration-200 
                       h-24 w-full object-contain ${
-                      mainImage === `http://localhost:5000${img}` ? 'ring-2 ring-blue-500' : ''
+                      mainImage === `https://server-tnc-production.up.railway.app${img}` ? 'ring-2 ring-blue-500' : ''
                     }`}
                     onClick={() => handleImageClick(img)}
                     onError={(e) => {
@@ -243,7 +243,7 @@ const ProductDetail = () => {
             {similarProducts.map((item) => (
               <div key={item.id} className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
                 <img
-                  src={`http://localhost:5000${item.image}`}
+                  src={`https://server-tnc-production.up.railway.app${item.image}`}
                   alt={item.name}
                   className="w-full h-48 object-contain"
                   onError={(e) => {

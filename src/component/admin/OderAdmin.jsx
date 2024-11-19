@@ -18,7 +18,7 @@ const OderAdmin = () => {
 
     const fetchOrders = async () => {
       try {
-        const response = await fetch('http://localhost:5000/orders');
+        const response = await fetch('https://server-tnc-production.up.railway.app/orders');
         const data = await response.json();
         setOrders(data);
       } catch (error) {
@@ -29,7 +29,7 @@ const OderAdmin = () => {
     const handleDelete = async (id) => {
       if (window.confirm('Bạn có chắc chắn muốn xóa đơn hàng này?')) {
         try {
-          const response = await fetch(`http://localhost:5000/orders/${id}`, {
+          const response = await fetch(`https://server-tnc-production.up.railway.app/orders/${id}`, {
             method: 'DELETE',
           });
           
@@ -129,7 +129,7 @@ const OderAdmin = () => {
             </tbody>
           </table>
         </div>
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-8 space-x-2 pb-4">
           <div className="inline-flex rounded-md shadow-sm">
             {Array.from({ length: totalPages }, (_, index) => (
               <button

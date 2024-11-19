@@ -54,7 +54,7 @@ const EditUser = () => {
         console.log('Submitting user data:', user);
 
         try {
-            const response = await fetch(`http://localhost:5000/users/${id}`, {
+            const response = await fetch(`https://server-tnc-production.up.railway.app/users/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

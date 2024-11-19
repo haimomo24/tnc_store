@@ -16,7 +16,7 @@ const Products = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:5000/products');
+                const response = await fetch('https://server-tnc-production.up.railway.app/products');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -254,12 +254,12 @@ const Products = () => {
                         >
                             <div className="relative h-72 p-4">
                                 <img
-                                    src={`http://localhost:5000${product.image}`}
+                                    src={`https://server-tnc-production.up.railway.app${product.image}`} 
                                     alt={product.name}
                                     className="w-full h-full object-contain object-center"
                                     onError={(e) => {
-                                        e.target.src = '/images/placeholder.jpg';
-                                        e.target.onerror = null;
+                                        e.target.src = '/images/placeholder.jpg'; 
+                                        e.target.onerror = null; 
                                     }}
                                 />
                             </div>
@@ -282,8 +282,8 @@ const Products = () => {
                         onClick={() => paginate(currentPage - 1)}
                         disabled={currentPage === 1}
                         className={`px-4 py-2 rounded-lg ${currentPage === 1
-                                ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                                : 'bg-blue-500 text-white hover:bg-blue-600'
+                            ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                            : 'bg-blue-500 text-white hover:bg-blue-600'
                             }`}
                     >
                         ⬅️
@@ -294,8 +294,8 @@ const Products = () => {
                             key={index + 1}
                             onClick={() => paginate(index + 1)}
                             className={`px-4 py-2 rounded-lg ${currentPage === index + 1
-                                    ? 'bg-blue-500 text-white'
-                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                ? 'bg-blue-500 text-white'
+                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                 }`}
                         >
                             {index + 1}
@@ -306,8 +306,8 @@ const Products = () => {
                         onClick={() => paginate(currentPage + 1)}
                         disabled={currentPage === totalPages}
                         className={`px-4 py-2 rounded-lg ${currentPage === totalPages
-                                ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                                : 'bg-blue-500 text-white hover:bg-blue-600'
+                            ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                            : 'bg-blue-500 text-white hover:bg-blue-600'
                             }`}
                     >
                         ➡️

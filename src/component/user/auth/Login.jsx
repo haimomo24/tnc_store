@@ -12,11 +12,12 @@ const Login = () => {
     const user = localStorage.getItem('user');
     if (user) {
       const userData = JSON.parse(user);
-    if (userData.level === 1) {
-      navigate('/');
-    } else if (userData.level === 2) {
-      navigate('/dashboard');
-    }
+      // Kiểm tra mức độ truy cập của người dùng và điều hướng
+      if (userData.level === 1) {
+        navigate('/');
+      } else if (userData.level === 2) {
+        navigate('/dashboard');
+      }
     }
   }, [navigate]);
 
@@ -26,18 +27,18 @@ const Login = () => {
     setError('');
 
     try {
-      // Add exact matching for both email and password
-      const response = await fetch(`http://localhost:5000/users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`);
+      // Gửi yêu cầu đến API để lấy dữ liệu người dùng
+      const response = await fetch(`https://server-tnc-production.up.railway.app/users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`);
       const users = await response.json();
       
-      // Get the specific user that matches both email and password
+      // Lọc ra người dùng khớp với cả email và mật khẩu
       const matchedUser = users.find(user => user.email === email && user.password === password);
       
       if (!matchedUser) {
         throw new Error('Email hoặc mật khẩu không đúng');
       }
 
-      // Store the matched user's data
+      // Lưu dữ liệu của người dùng vào localStorage
       localStorage.setItem('user', JSON.stringify({
         id: matchedUser.id,
         email: matchedUser.email,
@@ -46,12 +47,14 @@ const Login = () => {
         level: matchedUser.level 
       }));
 
+      // Điều hướng dựa trên quyền của người dùng
       if (matchedUser.level === 1) {
         navigate('/');
       } else if (matchedUser.level === 2) {
         navigate('/dashboard');
       }
     } catch (err) {
+      // Xử lý lỗi và hiển thị thông báo
       setError(err.message);
     } finally {
       setLoading(false);
@@ -84,7 +87,7 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Email address"
+                placeholder="Địa chỉ email"
               />
             </div>
             <div>
@@ -97,7 +100,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="mt-[30px] appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Password"
+                placeholder="Mật khẩu"
               />
             </div>
           </div>

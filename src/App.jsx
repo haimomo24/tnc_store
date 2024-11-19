@@ -16,6 +16,7 @@ import CardShoping from './component/user/CardShoping'
 import Pay from './component/user/Pay'
 import OderAdmin from './component/admin/OderAdmin'
 import EditUser from './component/admin/common/EditUser'
+import EditProfile from './component/user/auth/EditProfile'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <Route path='/product/:id' element={<ProductDetail/>}/>
         <Route path='/cartshoping' element={<CardShoping/>}/>
         <Route path='/pay' element={<Pay/>}/>
+        <Route path='/editprofile' element={<EditProfile/>}/>
         
       
       </Route>

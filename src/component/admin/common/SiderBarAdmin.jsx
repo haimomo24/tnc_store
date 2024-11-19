@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const SiderBarAdmin = () => {
   return (
-    <aside className="flex flex-col w-64 h-screen px-4 py-8  border-r rtl:border-r-0 rtl:border-l bg-gray-100">
+    <aside className="flex flex-col w-64 h-screen px-4 py-8  border-r rtl:border-r-0 rtl:border-l bg-#111827">
       <Link to="/">
         <img
           className="w-auto h-6 sm:h-7"
-          src="https://merakiui.com/images/logo.svg"
+          src="https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/368725784_695682005920092_1940464881160114044_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=CBfSaYEHa8sQ7kNvgGgU-yK&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=ADCmpmKiNZvKOt2sZK6qQdT&oh=00_AYA58QIme_W7FWy369uoxOr5aN7x8nYS_nGYSn6fWczmoA&oe=6737A74C"
           alt=""
         />
       </Link>

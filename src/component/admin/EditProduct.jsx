@@ -37,7 +37,7 @@ const EditProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/products/${id}`)
+        const response = await fetch(`https://server-tnc-production.up.railway.app/products/${id}`)
         if (!response.ok) {
           throw new Error('Failed to fetch product')
         }

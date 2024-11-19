@@ -86,7 +86,7 @@ const CartShopping = () => {
                 <div key={item.id} className="md:flex items-strech py-8 md:py-10 lg:py-8 border-t border-gray-50">
                   <div className="md:w-4/12 2xl:w-1/4 w-full">
                     <img
-                      src={`http://localhost:5000${item.image}`}
+                      src={`https://server-tnc-production.up.railway.app${item.image}`}
                       alt={item.name}
                       className="h-full object-center object-cover md:block hidden"
                     />

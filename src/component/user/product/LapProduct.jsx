@@ -11,7 +11,7 @@ const LapProduct = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:5000/products');
+                const response = await fetch('https://server-tnc-production.up.railway.app/products');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -91,7 +91,7 @@ const LapProduct = () => {
                     >
                         <div className="relative h-72 p-4">
                             <img
-                                src={`http://localhost:5000${product.image}`}
+                                src={`https://server-tnc-production.up.railway.app${product.image}`}
                                 alt={product.name}
                                 className="w-full h-full object-contain object-center"
                                 onError={(e) => {

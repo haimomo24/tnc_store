@@ -43,7 +43,7 @@ const ProductAdmin = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('http://localhost:5000/products');
+            const response = await fetch('https://server-tnc-production.up.railway.app/products');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -63,7 +63,7 @@ const ProductAdmin = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) {
             try {
-                const response = await fetch(`http://localhost:5000/products/${id}`, {
+                const response = await fetch(`https://server-tnc-production.up.railway.app/products/${id}`, {
                     method: 'DELETE',
                 });
 

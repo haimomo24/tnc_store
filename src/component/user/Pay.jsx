@@ -43,7 +43,7 @@ const Pay = () => {
           day: currentDate
         };
 
-        return fetch('http://localhost:5000/orders', {
+        return fetch('https://server-tnc-production.up.railway.app/orders', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
