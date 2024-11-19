@@ -6,7 +6,9 @@ import { Link, useNavigate } from 'react-router-dom';
 const Header = () => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
-
+    const images = [
+        "https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/368725784_695682005920092_1940464881160114044_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=CBfSaYEHa8sQ7kNvgGgU-yK&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=ADCmpmKiNZvKOt2sZK6qQdT&oh=00_AYA58QIme_W7FWy369uoxOr5aN7x8nYS_nGYSn6fWczmoA&oe=6737A74C"
+      ];
     useEffect(() => {
         const userData = localStorage.getItem('user');
         if (userData) {
@@ -45,7 +47,7 @@ const Header = () => {
                         <span className="sr-only">Your Company</span>
                         <img
                             className="h-12 w-auto"
-                            src="https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/368725784_695682005920092_1940464881160114044_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=CBfSaYEHa8sQ7kNvgGgU-yK&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=ADCmpmKiNZvKOt2sZK6qQdT&oh=00_AYA58QIme_W7FWy369uoxOr5aN7x8nYS_nGYSn6fWczmoA&oe=6737A74C"
+                            src={images}
                             alt="Company Logo"
                         />
                     </Link>
